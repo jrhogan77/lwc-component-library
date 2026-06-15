@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-form slds-form_stacked address-block">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="street">Street</label>
+            <div class="slds-form-element__control">
+                <input type="text" id="street" class="slds-input"
+                    value={street} onchange={handleChange} data-field="street"
+                    placeholder="123 Main St" />
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters_small">
+            <div class="slds-col slds-size_1-of-2 slds-form-element">
+                <label class="slds-form-element__label" for="city">City</label>
+                <div class="slds-form-element__control">
+                    <input type="text" id="city" class="slds-input"
+                        value={city} onchange={handleChange} data-field="city" />
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-form-element">
+                <label class="slds-form-element__label" for="state">State</label>
+                <div class="slds-form-element__control">
+                    <input type="text" id="state" class="slds-input"
+                        value={state} onchange={handleChange} data-field="state" maxlength="2" />
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-form-element">
+                <label class="slds-form-element__label" for="postalCode">ZIP</label>
+                <div class="slds-form-element__control">
+                    <input type="text" id="postalCode" class="slds-input"
+                        value={postalCode} onchange={handleChange} data-field="postalCode" maxlength="10" />
+                </div>
+            </div>
+        </div>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="country">Country</label>
+            <div class="slds-form-element__control">
+                <input type="text" id="country" class="slds-input"
+                    value={country} onchange={handleChange} data-field="country" />
+            </div>
+        </div>
+        <template if:true={hasError}>
+            <p class="slds-text-color_error slds-m-top_x-small">{errorMessage}</p>
+        </template>
+    </div>
+</template>
